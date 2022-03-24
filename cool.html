@@ -7,9 +7,10 @@
         req.open('GET', 'http://0.0.0.0:8080/notes', true);
         req.setRequestHeader('Access-Control-Allow-Origin', '*');
         req.setRequestHeader('Origin', '0.0.0.0:8080');
-        await req.send(null);
+        await req.send();
         if(req.status == 200) {
-          src = req.responseText;
+          src = 'success placeholder';
+          src = req.response;
         }
         else {
           src = 'error placeholder';
